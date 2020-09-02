@@ -3,7 +3,7 @@ Playbook for provisioning two VMs in Google Cloud Platform (GCP) with Docker and
 
 
 ### Usage 
-Set up properly the inventory file based on your needs.
+Set up properly the inventory file and the *var* fields in playbook.yml based on your needs.
 Run:
 `$ ansible-playbook playbook.yml -i inventory`
 
