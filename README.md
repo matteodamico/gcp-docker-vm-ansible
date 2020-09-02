@@ -1,5 +1,5 @@
 # gcp-docker-vm-ansible
-Playbook for provisioning two VMs with Docker and Docker Swarm
+Playbook for provisioning two VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm
 
 
 ### Usage 
