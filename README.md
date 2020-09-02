@@ -2,7 +2,9 @@
 Playbook for provisioning two VMs with Docker and Docker Swarm
 
 
-Usage: ansible-playbook playbook.yml
+### Usage 
+Set up properly the inventory file based on your needs
+`$ansible-playbook playbook.yml -i inventory`
 
 ### Installation
 This playbook uses a ansible-role to install and configure docker in the VMs.
