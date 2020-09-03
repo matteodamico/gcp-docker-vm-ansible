@@ -78,6 +78,12 @@
       scopes:
            - https://www.googleapis.com/auth/compute
       state: present
+        
+  - name: Wait for SSH to come up
+    wait_for: host={{ address.address }} port=22 delay=10 timeout=60
+    
+  - name: Add host to groupname
+    add_host: hostname={{ address.address }} groupname=new_instances
    
   - name: create second instance
     gcp_compute_instance:
@@ -103,11 +109,18 @@
    
 
   - name: Wait for SSH to come up
-    wait_for: host={{ address.address }} port=22 delay=10 timeout=60
+    wait_for: host={{ address2.address }} port=22 delay=10 timeout=60
     
   - name: Add host to groupname
-    add_host: hostname={{ address.address }} groupname=new_instances
+    add_host: hostname={{ address2.address }} groupname=new_instances
 
+
+- name: docker setting
+  hosts: "new_instances"
+  become: true
+  roles:
+    - role: "nickjj.docker"
+      tags: ["docker"]
 
 #- name: Manage new instances
 #  hosts: new_instances
