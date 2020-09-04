@@ -1,11 +1,13 @@
 #!/bin/bash
 
-sudo apt update;
+sudo apt update
 
-cd ansible;
+pushd ansible
 
-sudo apt install ansible --assume-yes;
+sudo apt install ansible --assume-yes
 
-sudo ansible-galaxy install nickjj.docker;
+sudo ansible-galaxy install nickjj.docker
 
-sh ../part0_source_creds.sh
+popd 
+
+source part0_source_creds.sh

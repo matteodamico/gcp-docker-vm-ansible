@@ -2,11 +2,12 @@
   hosts:  local
   gather_facts: no
   vars:
-      gcp_project: engaged-pottery-288209
+      gcp_project: "{{ lookup('env','GCP_PROJECT') }}"
       gcp_cred_kind: serviceaccount
       gcp_cred_file: ~/keys/saccount.json
       zone: "us-central1-a"
       region: "us-central1"
+      scope: "{{ lookup('env','GCP_SCOPES') }}"
   tasks:
   - name: create a disk
     gcp_compute_disk:
@@ -57,7 +58,7 @@
         boot: 'true'
         source: "{{ disk }}"
       network_interfaces:
-      - network: default
+      - network: null
         access_configs:
         - name: External NAT
           nat_ip: "{{ address }}"
@@ -96,7 +97,7 @@
         boot: 'true'
         source: "{{ disk2 }}"
       network_interfaces:
-      - network: default
+      - network: null
         access_configs:
         - name: External NAT
           nat_ip: "{{ address2 }}"

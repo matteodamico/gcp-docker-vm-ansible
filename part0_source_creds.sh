@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # author: Matteo D'Amico
 # license: MIT License
 # purpose: Source Ansible/GCP credentials
