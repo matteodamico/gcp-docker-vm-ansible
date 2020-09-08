@@ -137,7 +137,7 @@
     add_host: hostname={{ address2.address }} groupname=new_instances
 
 
-- name: "Configure app server(s)"
+- name: "Configure VM - user creation"
   hosts: "new_instances"
   become: True
   roles:
