@@ -2,4 +2,7 @@
 
 cd ansible;
 
-ansible-playbook playbooks/playbook.yml -v -i inventory;
+echo "Test variabile GCP_SERVICE_ACCOUNT_EMAIL:"
+echo $GCP_SERVICE_ACCOUNT_EMAIL
+
+ansible-playbook playbooks/playbook.yml -vvv -i inventory;

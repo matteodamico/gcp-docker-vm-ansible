@@ -4,7 +4,10 @@ sudo apt update
 
 pushd ansible
 
-sudo apt install ansible --assume-yes
+pip install ansible 
+pip install requests google-auth
+
+#sudo apt install ansible --assume-yes
 
 sudo ansible-galaxy install nickjj.docker
 
