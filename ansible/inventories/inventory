@@ -1,0 +1,12 @@
+[local]
+localhost ansible_connection=local       
+
+[docker_engine]
+swarm-01
+swarm-02
+
+[docker_swarm_manager]
+swarm-01 swarm_labels=deploy
+
+[docker_swarm_worker]
+swarm-02 swarm_labels='["libvirt", "docker", "foo", "bar"]'
