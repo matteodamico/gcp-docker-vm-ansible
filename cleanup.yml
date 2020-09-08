@@ -3,10 +3,6 @@
 - name: Destroy all demo resources
   hosts: local
   gather_facts: False
-  vars_files:
-    - gce_vars/auth
-    - gce_vars/machines
-    - gce_vars/zone
   tasks:
     - name: destroy the global forwarding rule
       gcp_compute_global_forwarding_rule:
@@ -64,22 +60,6 @@
     - name: Delete the first address
       gcp_compute_address:
         name: "{{ name_zonea }}-ip"
-        region: "{{ region }}"
-        project: "{{ project }}"
-        service_account_file: "{{ credentials_file }}"
-        auth_kind: "{{ auth_kind }}"
-        state: absent
-    - name: Delete the second instance
-      gcp_compute_instance:
-        name: "{{ name_zoneb }}"
-        zone: "{{ zone }}"
-        project: "{{ project }}"
-        service_account_file: "{{ credentials_file }}"
-        auth_kind: "{{ auth_kind }}"
-        state: absent
-    - name: Delete the second address
-      gcp_compute_address:
-        name: "{{ name_zoneb }}-ip"
         region: "{{ region }}"
         project: "{{ project }}"
         service_account_file: "{{ credentials_file }}"
