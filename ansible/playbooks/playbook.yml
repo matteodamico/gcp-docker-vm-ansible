@@ -142,7 +142,24 @@
   become: True
   roles:
     - { role: "nickjj.user", tags: "user" }
+  
+- name: "Configure VM - group"
+  hosts: "new_instances"
+  become: True
+  tasks:
+  - name: "add docker group"
+    group: name=docker 
 
+  - name: "add docker to docker group" 
+    user: name=docker groups=docker append=yes
+
+  - name: "restart docker service" 
+    service: name=docker state=started
+
+  - name: "get docker info" 
+    shell: docker info 
+    register: docker_info 
+    changed_when: false
 
 #- name: Docker installation - not running on CentOS due also to apt/yum
 #  hosts: "new_instances"
