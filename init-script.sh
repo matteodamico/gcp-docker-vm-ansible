@@ -17,4 +17,4 @@ popd
 source part0_source_creds.sh
 
 cp role_user_vars.yml ansible/roles/nickjj.user/defaults/main.yml
-
+cp role_docker_vars.yml ansible/role/nickjj.docker/defaults/main.yml
