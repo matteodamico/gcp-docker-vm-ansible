@@ -142,9 +142,3 @@
   become: True
   roles:
     - { role: "nickjj.user", tags: "user" }
-  
-
-- name: "Provision Docker Swarm Cluster"
-  hosts: "new_instances"
-  roles:
-    - { role: atosatto.docker-swarm }
