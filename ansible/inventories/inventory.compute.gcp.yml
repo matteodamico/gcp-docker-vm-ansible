@@ -1,0 +1,8 @@
+plugin: gcp_compute
+projects: 
+  - 'engaged-pottery-288209'
+regions:                        
+  - 'us-central1'
+filters: []
+auth_kind: serviceaccount
+service_account_file: '/home/matt_dmc08/keys/saccount.json'  
