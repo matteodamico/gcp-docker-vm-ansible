@@ -1,14 +1,16 @@
 #!/bin/bash
 
-sudo apt update
+sudo apt update -y
 
 pushd ansible
 
 pip install ansible 
 pip install requests google-auth
+pip install tox
+sudo apt-get install -y python3-jmespath
 
-ansible-galaxy install nickjj.docker
 ansible-galaxy install nickjj.user
+ansible-galaxy install atosatto.docker-swarm
 
 popd 
 
