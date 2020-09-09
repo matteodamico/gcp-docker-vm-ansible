@@ -3,6 +3,13 @@ projects:
   - 'engaged-pottery-288209'
 regions:                        
   - 'us-central1'
+hostnames:
+  - name
 filters: []
 auth_kind: serviceaccount
-service_account_file: '/home/matt_dmc08/keys/saccount.json'  
+service_account_file: '/home/matt_dmc08/keys/saccount.json' 
+
+compose:
+  # Set an inventory parameter to use the Public IP address to connect to the host
+  # For Private ip use "networkInterfaces[0].networkIP"
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP

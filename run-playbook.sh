@@ -2,4 +2,4 @@
 
 cd ansible;
 
-ansible-playbook playbooks/playbook.yml -vvv
+ansible-playbook playbooks/playbook.yml -i inventories/inventory.compute.gcp.yml -vvv
