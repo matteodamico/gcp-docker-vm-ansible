@@ -51,6 +51,7 @@ To test the Reachability of the master run the follow command on the manager ins
 
 To test if the node, as a worker, can accept tasks
 `docker node inspect <node_id> --format "{{ .Status.State }}"`
+
 -----------
 ## License
 
