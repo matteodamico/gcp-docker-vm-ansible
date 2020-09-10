@@ -19,3 +19,4 @@ popd
 source part0_source_creds.sh
 
 cp role_user_vars.yml ansible/roles/nickjj.user/defaults/main.yml
+cp setup-swarm-label.yml ansible/roles/atosatto.docker-swarm/tasks/setup-swarm-labels.yml

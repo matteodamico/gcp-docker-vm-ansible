@@ -110,7 +110,7 @@
   - name: create second instance
     gcp_compute_instance:
       name: swarm-02
-      machine_type: n1-standard-1 #oppure e2-small 
+      machine_type: n1-standard-1 #oppure e2-small
       disks:
       - auto_delete: 'true'
         boot: 'true'
