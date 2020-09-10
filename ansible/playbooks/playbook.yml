@@ -69,7 +69,6 @@
   - name: create a instance
     gcp_compute_instance:
       name: swarm-01
-      hostname: swarm-01
       machine_type: n1-standard-1  #or e2-small 
       disks:
       - auto_delete: 'true'
@@ -111,7 +110,6 @@
   - name: create second instance
     gcp_compute_instance:
       name: swarm-02
-      hostname: swarm-02
       machine_type: n1-standard-1 #oppure e2-small 
       disks:
       - auto_delete: 'true'
