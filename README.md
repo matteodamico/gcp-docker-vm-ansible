@@ -9,7 +9,7 @@ This playbook creates two CentOS VMs in Google Cloud Platform (GCP) with Docker 
 -----------
 ### REQUIREMENTS
 - have an account on GCP
-- have a running instance where run this playbook
+- have a running Debian instance where run this playbook
 - have created a service account (configured with relative grants) linked to GCP project
 - have generated (public and private) keys linked to the service account.
 Please see this [guide](https://developers.redhat.com/blog/2020/05/06/using-ansible-to-automate-google-cloud-platform/) to set up your gcp environment.
@@ -23,7 +23,7 @@ Run the init-script with to set variables and install the ansible binaries
 
 ### Usage
 
-Set up properly the inventory file and the *var* fields in playbook.yml based on your needs.
+Set up properly the inventory file and the *var* fields in role_user_vars.yml based on your needs.
 Then run the playbook
 
 `$ sh run-playbook.sh`
