@@ -33,10 +33,10 @@ Then run the playbook
 This playbook uses a ansible-role to install and configure docker in the VMs.
 Please use the following command to install the roles with ansible-galaxy.
 
-`$ ansible-galaxy install atosatto.docker-swarm`
+`$ ansible-galaxy install atosatto.docker-swarm`  
 `$ ansible-galaxy install nickjj.user`
 
-[Ansible-dockerswarm] (https://github.com/atosatto/ansible-dockerswarm)
+[Ansible-dockerswarm] (https://github.com/atosatto/ansible-dockerswarm)  
 [Ansible user] (https://github.com/nickjj/ansible-user)
 
 ###  Multiple inventory sources
