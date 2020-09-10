@@ -6,7 +6,15 @@ This playbook creates two CentOS VMs in Google Cloud Platform (GCP) with Docker 
 - *master* to create two CentOS VMs in Google Cloud Platform (GCP) with Docker
 - *docker_swarm_debian* to create two Debian VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm
 
+-----------
+### REQUIREMENTS
+- have an account on GCP
+- have a running instance where run this playbook
+- have created a service account (configured with relative grants) linked to GCP project
+- have generated (public and private) keys linked to the service account.
+Please see this [guide](https://developers.redhat.com/blog/2020/05/06/using-ansible-to-automate-google-cloud-platform/) to set up your gcp environment.
 
+-----------
  ### First installation
 Set up properly *var* fields in part0_source_creds.sh file based on your project name.
 Run the init-script with to set variables and install the ansible binaries
