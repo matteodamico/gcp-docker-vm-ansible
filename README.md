@@ -46,6 +46,9 @@ This playbook uses multiple inventory sources: both static and dynamic inventory
 You can perform some test using molecule.
 Run *test.sh* file
 
+Check if the cluster is active check running the following command in manager node:
+`docker system info | grep Swarm`
+
 To test the Reachability of the master run the follow command on the manager instance:
 `docker node inspect <master_node_id>  --format "{{ .ManagerStatus.Reachability }}"`
 
