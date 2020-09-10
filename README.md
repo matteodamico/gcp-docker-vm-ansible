@@ -3,7 +3,8 @@ Playbook for provisioning two VMs in Google Cloud Platform (GCP) with Docker.
 
 
 ### PLEASE SEE THE BRANCH 
-*docker_swarm* to run the playbook for provisioning two VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm
+*docker_swarm_centos* to create two CentOS VM in Google Cloud Platform (GCP) with Docker and Docker Swarm
+*docker_swarm_debian* to create two Debian VM in Google Cloud Platform (GCP) with Docker and Docker Swarm
 
 
  ### First installation
@@ -25,13 +26,14 @@ This playbook uses a ansible-role to install and configure docker in the VMs.
 Please use the following command to install nickjj.docker role with ansible-galaxy.
 
 `$ ansible-galaxy install nickjj.docker`
+`$ ansible-galaxy install nickjj.user`
 
 [Ref.] (https://github.com/nickjj/ansible-docker/tree/v1.9.0)
 
+###  Multiple inventory sources
+This playbook uses multiple inventory sources: both static and dynamic inventory (with gcp pluging)
 
-
----------
-`$ ansible-playbook playbook.yml -i inventory`
+-----------
 
 ## License
 
