@@ -3,8 +3,8 @@ Playbook for provisioning two VMs in Google Cloud Platform (GCP) with Docker.
 
 
 ### PLEASE SEE THE BRANCH 
-*docker_swarm_centos* to create two CentOS VM in Google Cloud Platform (GCP) with Docker and Docker Swarm
-*docker_swarm_debian* to create two Debian VM in Google Cloud Platform (GCP) with Docker and Docker Swarm
+- *docker_swarm_centos* to create two CentOS VM in Google Cloud Platform (GCP) with Docker and Docker Swarm
+- *docker_swarm_debian* to create two Debian VM in Google Cloud Platform (GCP) with Docker and Docker Swarm
 
 
  ### First installation
