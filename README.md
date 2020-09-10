@@ -42,8 +42,16 @@ Please use the following command to install the roles with ansible-galaxy.
 ###  Multiple inventory sources
 This playbook uses multiple inventory sources: both static and dynamic inventory (with gcp pluging)
 
------------
+### Test
+You can perform some test using molecule.
+Run *test.sh* file
 
+To test the Reachability of the master run the follow command on the manager instance:
+`docker node inspect <master_node_id>  --format "{{ .ManagerStatus.Reachability }}"`
+
+To test if the node, as a worker, can accept tasks
+`docker node inspect <node_id> --format "{{ .Status.State }}"`
+-----------
 ## License
 
 MIT
