@@ -8,7 +8,7 @@
 export GCP_PROJECT='engaged-pottery-288209'
 export GCP_AUTH_KIND='serviceaccount'
 #export GCP_SERVICE_ACCOUNT_EMAIL='ansible@engaged-pottery-288209.iam.gserviceaccount.com'
-export GCP_SERVICE_ACCOUNT_FILE='/home/matt_dmc08/keys/saccount.json'
+export GCP_SERVICE_ACCOUNT_FILE='~/keys/saccount.json'
 export GCP_SCOPES='https://www.googleapis.com/auth/compute'
 export GCP_ZONE='us-central1-a'
 export GCP_REGION='us-central1'
