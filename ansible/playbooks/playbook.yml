@@ -141,7 +141,7 @@
   hosts: 
     - swarm-01
     - swarm-02
-  become: True
+  become: yes
   roles:
     - { role: "nickjj.user", tags: "user" }
 

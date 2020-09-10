@@ -12,6 +12,7 @@ pushd ansible
 
 pip install requests google-auth
 ansible-galaxy install nickjj.user
+ansible-galaxy install atosatto.docker-swarm --force
 
 popd 
 
