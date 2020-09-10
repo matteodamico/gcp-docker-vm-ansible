@@ -148,7 +148,6 @@
   hosts: 
     - swarm-01
     - swarm-02
- # gather_facts: no
   become: yes
   roles:
     - { role: atosatto.docker-swarm }
