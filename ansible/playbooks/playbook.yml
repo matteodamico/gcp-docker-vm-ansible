@@ -150,9 +150,7 @@
 
 
 - name: "Provision Docker Swarm Cluster"
-  hosts: 
-    - swarm-01
-    - swarm-02
+  hosts: local
   become: yes
   roles:
     - { role: atosatto.docker-swarm }
@@ -163,7 +161,7 @@
   tasks:   
   - name: install swamrpit
     command: docker run -it --rm --name swarmpit-installer  -e INTERACTIVE=0 -e ADMIN_USERNAME=admin - e STACK_NAME=swarmui -e APP_PORT=888 -e ADMIN_PASSWORD=administrator --volume /var/run/docker.sock:/var/run/docker.sock swarmpit/install:1.9
-  register: swarmpitui
+
 
 - name: Open GCP Firewall ports
   hosts:  local
