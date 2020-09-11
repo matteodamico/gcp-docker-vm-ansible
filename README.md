@@ -1,6 +1,7 @@
 # gcp-docker-vm-ansible
 This playbook creates two CentOS VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm.
 
+[![Build Status](your travis url for the repo here.png)](your travis url for the repo here)
 
 ### PLEASE SEE THE BRANCH 
 - *master* to create two CentOS VMs in Google Cloud Platform (GCP) with Docker
