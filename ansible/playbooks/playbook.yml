@@ -150,7 +150,9 @@
 
 
 - name: "Provision Docker Swarm Cluster"
-  hosts: local
+  hosts: 
+    - swarm-01
+    - swarm-02
   become: yes
   roles:
     - { role: atosatto.docker-swarm }
