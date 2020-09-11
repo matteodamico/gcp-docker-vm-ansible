@@ -18,6 +18,7 @@ Please see this [guide](https://developers.redhat.com/blog/2020/05/06/using-ansi
 ### Features
 - This playbook creates an user [docker] and assing it to the docker group that can query the docker service without use the root privilegies.
 - This playbook add the docker daemon to the autostartup at system boot. 
+- This playbook open 2 ports on the GCP firewall: 888 port for swarmpit, 8080 for nginx ( removed them if you don't use )
 
 
 ### First installation
@@ -33,7 +34,17 @@ Then run the playbook
 
 `$ sh run-playbook.sh`
 
+## Deploy a simple application on the Swarm
+To deploy a new stack within the cluster. Login in the Swarmpit UI, go to Stacks Tabs and create a new one.
+Set the stack name and past the following code in editor:
+`version: '3'
 
+services:
+    app:
+        image: nginx
+        ports: 
+            - "8080:80"
+`
 ### Ansible Roles used
 This playbook uses a ansible-role to install and configure docker in the VMs.
 Please use the following command to install the roles with ansible-galaxy.
