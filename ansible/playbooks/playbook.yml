@@ -86,6 +86,9 @@
       service_account_file: "{{ gcp_cred_file }}"
       scopes:
            - "{{ scope }}"
+      tags:
+        items:
+          - manager
       state: present
         
   - name: Wait for SSH to come up
@@ -151,3 +154,50 @@
   become: yes
   roles:
     - { role: atosatto.docker-swarm }
+    
+- name: Install Swarmpit UI
+  hosts:  swarm-01
+  gather_facts: no
+  tasks:   
+  - name: install swamrpit
+    command: docker run -it --rm --name swarmpit-installer  -e INTERACTIVE=0 -e ADMIN_USERNAME=admin - e STACK_NAME=swarmui -e APP_PORT=888 -e ADMIN_PASSWORD=administrator --volume /var/run/docker.sock:/var/run/docker.sock swarmpit/install:1.9
+  register: swarmpitui
+
+- name: Open GCP Firewall ports
+  hosts:  local
+  gather_facts: no
+  connection: local
+  vars:
+      gcp_project: "{{ lookup('env','GCP_PROJECT') }}"
+      gcp_cred_kind: "{{ lookup('env','GCP_AUTH_KIND') }}"
+      scope: "{{ lookup('env','GCP_SCOPES') }}"
+  tasks:
+  - name: create a firewall rule for UI
+    gcp_compute_firewall:
+      name: ui-swarmpit55
+      allowed:
+        -  ip_protocol: tcp
+           ports: '8080'
+      auth_kind: "{{ gcp_cred_kind }}"
+      project: "{{ gcp_project }}"
+      direction: "INGRESS"
+      target_tags: 
+        - manager
+      scopes:
+        - "{{ scope }}"
+      state: present
+  - name: create a firewall rule for NGINX
+    gcp_compute_firewall:
+      name: ui-nginx55
+      allowed:
+        -  ip_protocol: tcp
+           ports: 
+             - '888'
+      auth_kind: "{{ gcp_cred_kind }}"
+      project: "{{ gcp_project }}"
+      direction: "INGRESS"
+      target_tags: 
+        - manager
+      scopes:
+        - "{{ scope }}"
+      state: present
