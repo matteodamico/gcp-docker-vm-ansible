@@ -79,7 +79,7 @@ services:
 
 
 ### Tests
-The repository (currently this branch) is linked to [Travis CI](https://travis-ci.org/) to perform some automazation.
+The repository (currently this branch) is linked to [Travis CI](https://travis-ci.org/) to perform some automation.
 In particular will be performed a ansible-lint (ignoring warnings).
 
 You can perform some test using molecule.
