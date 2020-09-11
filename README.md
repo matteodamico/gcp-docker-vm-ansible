@@ -18,11 +18,11 @@ Please see this [guide](https://developers.redhat.com/blog/2020/05/06/using-ansi
 -----------
 ### Features
 - This playbook creates an user [docker] and assing it to the docker group that can query the docker service without use the root privilegies.
-- This playbook add the docker daemon to the autostartup at system boot. 
-- This playbook open 2 ports on the GCP firewall: 888 port for swarmpit, 8080 for nginx ( removed them if you don't use )
+- This playbook adds the docker daemon to the autostartup at system boot. 
+- This playbook opens 2 ports on the GCP firewall: 888 port for swarmpit, 8080 for nginx ( remove them if you don't use )
 
 ### Ansible Roles used
-This playbook uses a ansible-role to install and configure docker in the VMs.
+This playbook uses an ansible-role to install and configure Docker in the VMs.
 Please use the following command (or run init-script.sh - see below) to install the roles with ansible-galaxy.
 
 `$ ansible-galaxy install atosatto.docker-swarm`  
@@ -37,12 +37,11 @@ This playbook uses multiple inventory sources: both static and dynamic inventory
 
 ### First installation
 Set up properly *var* fields in part0_source_creds.sh file based on your project name.
-Run the init-script with to set variables and install the ansible binaries
+Run the init-script using *source* command to set variables and install the ansible binaries
 
 `$ source init-script.sh`
 
 ### Usage
-
 Set up properly the inventory file and the *var* fields in role_user_vars.yml based on your needs.
 Then run the playbook
 
@@ -57,8 +56,17 @@ By default, a unix domain socket (or IPC socket) is created at /var/run/docker.s
 If you are interested in a connection via *tcp* protocol (or others) please see this [page] (https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-socket-option).
 
 ### Deploy a simple application on the Swarm
-To deploy a new stack within the cluster, login in the Swarmpit UI, go to Stacks Tabs and create a new one.
-Set the stack name and past the following code in editor:
+To deploy a new stack within the cluster you can use the Swarmpit application installed within the cluster.
+The login page is reachable on the master node ip-address at 888 port.
+Use the following default credentials to log in:
+
+```txt
+user:admin
+password:administrator
+```
+
+Once logged into the Swarmpit UI, go to Stacks tab and create a new one.
+Insert the stack name and paste the following code in editor:
 ```yaml 
 version: '3'
 
@@ -70,7 +78,10 @@ services:
 ```
 
 
-### Test
+### Tests
+The repository (currently this branch) is linked to [Travis CI] (www.travisci.com) to perform some automazation.
+In particular will be performed a ansible-lint (ignoring warnings).
+
 You can perform some test using molecule.
 Run *test.sh* file
 
