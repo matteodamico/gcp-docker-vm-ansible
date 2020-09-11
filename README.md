@@ -15,7 +15,14 @@ This playbook creates two CentOS VMs in Google Cloud Platform (GCP) with Docker 
 Please see this [guide](https://developers.redhat.com/blog/2020/05/06/using-ansible-to-automate-google-cloud-platform/) to set up your gcp environment.
 
 -----------
- ### First installation
+### Feature
+- This playbook creates an user [docker] and assing it to the docker group that can query the docker service without use the root privilegies.
+- This playbook add the docker daemon to the autostartup at system boot. 
+-
+
+
+
+### First installation
 Set up properly *var* fields in part0_source_creds.sh file based on your project name.
 Run the init-script with to set variables and install the ansible binaries
 
