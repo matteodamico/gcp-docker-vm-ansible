@@ -162,7 +162,7 @@
   gather_facts: no
   tasks:   
   - name: install swamrpit
-    command: docker run -it --rm --name swarmpit-installer  -e INTERACTIVE=0 -e ADMIN_USERNAME=admin - e STACK_NAME=swarmui -e APP_PORT=888 -e ADMIN_PASSWORD=administrator --volume /var/run/docker.sock:/var/run/docker.sock swarmpit/install:1.9
+    command: "docker run -it --rm --name swarmpit-installer  -e INTERACTIVE=0 -e ADMIN_USERNAME=admin -e STACK_NAME=swarmui -e APP_PORT=888 -e ADMIN_PASSWORD=administrator --volume /var/run/docker.sock:/var/run/docker.sock swarmpit/install:1.9"
 
 
 - name: Open GCP Firewall ports
@@ -182,7 +182,7 @@
            ports: '8080'
       auth_kind: "{{ gcp_cred_kind }}"
       project: "{{ gcp_project }}"
-      direction: "INGRESS"
+ #    direction: "INGRESS"
       target_tags: 
         - manager
       scopes:
@@ -197,7 +197,7 @@
              - '888'
       auth_kind: "{{ gcp_cred_kind }}"
       project: "{{ gcp_project }}"
-      direction: "INGRESS"
+ #     direction: "INGRESS"
       target_tags: 
         - manager
       scopes:
