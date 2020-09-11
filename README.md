@@ -47,15 +47,15 @@ Then run the playbook
 
 `$ sh run-playbook.sh`
 
-## Protect the docker daemon
+### Protect the docker daemon
 See this [page] (https://docs.docker.com/engine/security/https/) to understand how to protect the docker daemon.
 
-## Use another socket type to link to docker engine
+### Use another socket type to link to docker engine
 The Docker daemon can listen for Docker Engine API requests via three different types of Socket: unix, tcp, and fd.
 By default, a unix domain socket (or IPC socket) is created at /var/run/docker.sock, requiring either root permission, or docker group membership.
 If you are interested in a connection via *tcp* protocol (or others) please see this [page] (https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-socket-option).
 
-## Deploy a simple application on the Swarm
+### Deploy a simple application on the Swarm
 To deploy a new stack within the cluster, login in the Swarmpit UI, go to Stacks Tabs and create a new one.
 Set the stack name and past the following code in editor:
 ```yaml 
