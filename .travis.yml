@@ -9,12 +9,17 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  # Install Ansible.
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
-  
-  # insert keys downloaded with credentials provided by env variables
-  
+  - pip install -r tests/test-requirements.txt
 script:
-  - cd ansible && ansible-playbook playbooks/playbook.yml 
+  - ansible-lint playbooks/*.yml -x 303,701,601,206,602,403,301,502,306
+
+# install:
+# Install Ansible.
+#   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
+#   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
+  
+# insert keys downloaded with credentials provided by env variables
+  
+# script:
+#  - cd ansible && ansible-playbook playbooks/playbook.yml 
   
