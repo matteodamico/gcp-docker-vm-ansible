@@ -37,14 +37,15 @@ Then run the playbook
 ## Deploy a simple application on the Swarm
 To deploy a new stack within the cluster. Login in the Swarmpit UI, go to Stacks Tabs and create a new one.
 Set the stack name and past the following code in editor:
-`version: '3'
+```yaml 
+version: '3'
 
 services:
     app:
         image: nginx
         ports: 
             - "8080:80"
-`
+```
 ### Ansible Roles used
 This playbook uses a ansible-role to install and configure docker in the VMs.
 Please use the following command to install the roles with ansible-galaxy.
