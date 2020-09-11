@@ -8,4 +8,4 @@ user_generate_ssh_key: False
 
 user_enable_passwordless_sudo: True
 
-user_local_ssh_key_path: "~/.ssh/google_compute_engine.pub"
+user_local_ssh_key_path: "~/keys//google_compute_engine.pub"

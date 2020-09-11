@@ -94,8 +94,8 @@
   - name: Wait for SSH to come up
     wait_for: host={{ address.address }} port=22 delay=10 timeout=60
     
-  - name: Add host to groupname
-    add_host: hostname={{ address.address }} groupname=new_instances
+#  - name: Add host to groupname
+#    add_host: hostname={{ address.address }} groupname=new_instances
 
     
   - name: create a address2
@@ -113,7 +113,7 @@
   - name: create second instance
     gcp_compute_instance:
       name: swarm-02
-      machine_type: n1-standard-1 #oppure e2-small 
+      machine_type: n1-standard-1 #oppure e2-small
       disks:
       - auto_delete: 'true'
         boot: 'true'
@@ -136,15 +136,17 @@
   - name: Wait for SSH to come up
     wait_for: host={{ address2.address }} port=22 delay=10 timeout=60
     
-  - name: Add host to groupname
-    add_host: hostname={{ address2.address }} groupname=new_instances
+#  - name: Add host to groupname
+#    add_host: hostname={{ address2.address }} groupname=new_instances
 
 
-#- name: "Configure VM - user creation"
-#  hosts: "new_instances"
-#  become: True
-#  roles:
-#    - { role: "nickjj.user", tags: "user" }
+- name: "Configure VM - user creation"
+  hosts: 
+    - swarm-01
+    - swarm-02
+  become: yes
+  roles:
+    - { role: "nickjj.user", tags: "user" }
 
 
 - name: "Provision Docker Swarm Cluster"
