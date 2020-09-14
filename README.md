@@ -1,4 +1,4 @@
-# gcp-docker-vm-ansible [![Build Status](https://travis-ci.org/matteodamico/gcp-docker-vm-ansible.svg?branch=docker_swarm_centos.png)](https://travis-ci.org/github/matteodamico/gcp-docker-vm-ansible)
+# gcp-docker-vm-ansible [![Build Status](https://travis-ci.org/matteodamico/gcp-docker-vm-ansible.svg?branch=docker_swarm_centos)](https://travis-ci.org/matteodamico/gcp-docker-vm-ansible)
 This playbook creates two CentOS VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm.
 
 
