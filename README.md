@@ -1,6 +1,10 @@
 # gcp-docker-vm-ansible
 This playbook creates two Debian VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm.
 
+-----------
+### DEPRECADED - NOT TESTED
+-----------
+
 
 ### PLEASE SEE THE BRANCH 
 - *master* to create two CentOS VMs in Google Cloud Platform (GCP) with Docker
