@@ -17,7 +17,7 @@ Please see this [guide](https://developers.redhat.com/blog/2020/05/06/using-ansi
 
 -----------
 ### Features
-- This playbook creates an user [docker] and assing it to the docker group that can query the docker service without use the root privilegies.
+- This playbook creates an user [docker] and assigns it to the docker group that can query the docker service without the use of the root privilegies.
 - This playbook adds the docker daemon to the autostartup at system boot. 
 - This playbook opens 2 ports on the GCP firewall: 888 port for swarmpit, 8080 for nginx ( remove them if you don't use )
 
@@ -80,7 +80,7 @@ services:
 
 ### Tests
 The repository (currently this branch) is linked to [Travis CI](https://travis-ci.org/) to perform some automation.
-In particular will be performed a ansible-lint (ignoring warnings).
+In particular will be performed an ansible-lint (ignoring warnings) on the playbook. See .travis.yml file for more details.
 
 In addiction, you can perform some test using molecule.
 Run *test.sh* file
