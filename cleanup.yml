@@ -1,5 +1,4 @@
 ---
-# compute-video-demo-ansible
 - name: Destroy all demo resources
   hosts: local
   gather_facts: False
