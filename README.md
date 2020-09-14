@@ -7,11 +7,7 @@ Playbook for provisioning two VMs in Google Cloud Platform (GCP) with Docker.
 - *docker_swarm_debian* to create two Debian VMs in Google Cloud Platform (GCP) with Docker and Docker Swarm
 
 
------------
-#### DEPRECATED - NOT TESTED see docker_swarm_centos branch
------------
-
- ### First installation
+### First installation
 Set up properly *var* fields in part0_source_creds.sh file based on your project name.
 Run the init-script with to set variables and install the ansible binaries
 
