@@ -1,6 +1,6 @@
 ---
-# compute-video-demo-ansible
-- name: Destroy all demo resources
+
+- name: Destroy all gcp resources
   hosts: local
   gather_facts: False
   tasks:
